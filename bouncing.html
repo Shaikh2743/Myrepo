@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .Main {
+        display: flex;
+        text-align: center;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Mycircle {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        background-color: green;
+        animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-100px);
+        }
+    }
+</style>
+
+<body>
+    <div class="Main">
+        <span class="Mycircle">
+        </span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form>
+            <input type="text" id="username" placeholder="Enter Username"><br>
+            <input type="email" id="mail" placeholder="Enter Mail"><br>
+            <input type="submit" id="submit" value="Submit" disabled>
+        </form>
+    </div>
+    <script>
+        var submit = document.getElementById("submit");
+        var username = document.getElementById("username");
+        var mail = document.getElementById("mail");
+
+        username.addEventListener("input", toggleSubmitButton);
+        mail.addEventListener("input", toggleSubmitButton);
+
+        function isValidEmail(Email) {
+            // Basic email validation regex
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailRegex.test(Email);
+        }
+
+        function toggleSubmitButton() {
+            if (username.value && isValidEmail(mail.value)) {
+                submit.removeAttribute("disabled");
+            } else {
+                submit.setAttribute("disabled", "true");
+            }
+        }
+    </script>
+</body>
+
+</html>
